@@ -21,13 +21,13 @@ namespace TechJobs.Controllers
             columnChoices.Add("all", "All");
         }
 
-        public IActionResult Index()
+        public IActionResult Index() //action method that passes the column choices from the controler to the list index
         {
             ViewBag.columns = columnChoices;
             return View();
         }
 
-        public IActionResult Values(string column)
+        public IActionResult Values(string column) //action methods that controls functionality for showing either all the jobs or jobs by search term 
         {
             if (column.Equals("all"))
             {
