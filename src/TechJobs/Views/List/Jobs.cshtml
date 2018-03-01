@@ -3,5 +3,33 @@
 <h3>@ViewBag.jobs.Count Result(s)</h3>
 
 @{ 
-    // TODO #3 - Use the same list display from Views/Search/Index.cshtml 
+// - Use the same list display from Views/Search/Index.cshtml 
+}
+
+@if (ViewBag.jobs.Count !=null)
+{
+    <h3>Search Results</h3>
+
+    @foreach (Dictionary<string, string>job in ViewBag.jobs)
+    {
+        <div class="table-responsive">
+        <table class="job-listing">
+            @foreach (KeyValuePair<string, string> row in job)
+             {
+                
+                <tr>
+                <th scope="row">@row.Key</th>
+                <td>@row.Value</td>
+                </tr>
+
+        
+
+             }
+
+
+        </table>
+       </div>
+        <br />
+
+    }
 }
